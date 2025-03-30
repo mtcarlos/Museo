@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Museo Virtual en A-Frame</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <style>
+      body { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Definición de assets: aquí se cargan las imágenes a usar -->
+      <a-assets>
+        <img id="imagen1" src="ruta_de_tu_imagen1.jpg" alt="Cuadro 1">
+        <img id="imagen2" src="ruta_de_tu_imagen2.jpg" alt="Cuadro 2">
+        <!-- Puedes agregar más imágenes aquí -->
+      </a-assets>
+      
+      <!-- Suelo -->
+      <a-plane position="0 0 0" rotation="-90 0 0" width="20" height="20" color="#CCCCCC"></a-plane>
+      
+      <!-- Pared trasera -->
+      <a-box position="0 2 -10" depth="0.2" width="20" height="4" color="#FFFFFF"></a-box>
+      <!-- Pared izquierda -->
+      <a-box position="-10 2 0" depth="0.2" width="20" height="4" color="#FFFFFF" rotation="0 90 0"></a-box>
+      <!-- Pared derecha -->
+      <a-box position="10 2 0" depth="0.2" width="20" height="4" color="#FFFFFF" rotation="0 90 0"></a-box>
+      <!-- Pared frontal -->
+      <a-box position="0 2 10" depth="0.2" width="20" height="4" color="#FFFFFF" rotation="0 180 0"></a-box>
+      
+      <!-- Cuadros en la pared trasera -->
+      <a-plane position="-5 2 -9.9" rotation="0 0 0" width="4" height="3" src="#imagen1"></a-plane>
+      <a-plane position="5 2 -9.9" rotation="0 0 0" width="4" height="3" src="#imagen2"></a-plane>
+      
+      <!-- Cámara para explorar la escena -->
+      <a-entity position="0 1.6 5">
+        <a-camera wasd-controls-enabled="true"></a-camera>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
