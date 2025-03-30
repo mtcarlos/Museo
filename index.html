@@ -10,31 +10,51 @@
   </head>
   <body>
     <a-scene>
-      <!-- Definición de assets: aquí se cargan las imágenes a usar -->
+      <!-- Definición de assets: carga las imágenes que se usarán en los cuadros y el suelo -->
       <a-assets>
-        <img id="imagen1" src="ruta_de_tu_imagen1.jpg" alt="Cuadro 1">
-        <img id="imagen2" src="ruta_de_tu_imagen2.jpg" alt="Cuadro 2">
-        <!-- Puedes agregar más imágenes aquí -->
+        <img id="imagen1" src="Cuadro1.webp" alt="Cuadro 1">
+        <img id="imagen2" src="Cuadro2.webp" alt="Cuadro 2">
+        <img id="imagen3" src="Cuadro3.webp" alt="Cuadro 3">
+        <img id="imagen4" src="Cuadro4.jpg" alt="Cuadro 4">
+        <img id="imagen5" src="Cuadro5.jpg" alt="Cuadro 5">
+        <img id="imagen6" src="Cuadro6.jpeg" alt="Cuadro 6">
+        <img id="imagen7" src="ruta_de_tu_imagen7.jpg" alt="Cuadro 7">
+        <img id="imagen8" src="ruta_de_tu_imagen8.jpg" alt="Cuadro 8">
+        <img id="Suelo" src="Suelo.jpg" alt="Suelo">
+        <img id="Cielo" src="Cielo.jpg" alt="Cielo">
       </a-assets>
       
       <!-- Suelo -->
-      <a-plane position="0 0 0" rotation="-90 0 0" width="20" height="20" color="#CCCCCC"></a-plane>
+      <a-plane position="0 0 0" rotation="-90 0 0" width="20" height="20" src="#Suelo" color="#ffffff"></a-plane>
+      
+      <!-- Techo -->
+      <a-plane position="0 10 0" rotation="90 0 0" width="20" height="20" color="#ffffff" src="#Cielo"></a-plane>
       
       <!-- Pared trasera -->
-      <a-box position="0 2 -10" depth="0.2" width="20" height="4" color="#FFFFFF"></a-box>
+      <a-box position="0 5 -10" depth="0.2" width="20" height="10" color="#a5a09c"></a-box>
       <!-- Pared izquierda -->
-      <a-box position="-10 2 0" depth="0.2" width="20" height="4" color="#FFFFFF" rotation="0 90 0"></a-box>
+      <a-box position="-10 5 0" depth="0.2" width="20" height="10" rotation="0 90 0" material="color: #a5a09c"></a-box>
       <!-- Pared derecha -->
-      <a-box position="10 2 0" depth="0.2" width="20" height="4" color="#FFFFFF" rotation="0 90 0"></a-box>
+      <a-box position="10 5 0" depth="0.2" width="20" height="10" rotation="0 90 0" color="#a5a09c"></a-box>
       <!-- Pared frontal -->
-      <a-box position="0 2 10" depth="0.2" width="20" height="4" color="#FFFFFF" rotation="0 180 0"></a-box>
+      <a-box position="0 5 10" depth="0.2" width="20" height="10" rotation="0 180 0" color="#a5a09c"></a-box>
       
       <!-- Cuadros en la pared trasera -->
-      <a-plane position="-5 2 -9.9" rotation="0 0 0" width="4" height="3" src="#imagen1"></a-plane>
-      <a-plane position="5 2 -9.9" rotation="0 0 0" width="4" height="3" src="#imagen2"></a-plane>
+      <a-plane position="-5 5 -9.5" rotation="0 0 0" width="4" height="3" src="#imagen1"></a-plane>
+      <a-plane position="5 5 -9.5" rotation="0 0 0" width="4" height="3" src="#imagen4"></a-plane>
       
+      <!-- Cuadros en la pared izquierda -->
+      <a-plane position="-9.5 5 -5" rotation="0 90 0" width="4" height="3" src="#imagen3"></a-plane>
+      <a-plane position="-9.5 5 5" rotation="0 90 0" width="4" height="3" src="#imagen2"></a-plane>
+      
+      <!-- Cuadros en la pared derecha -->
+      <a-plane position="9.5 5 -5" rotation="0 -90 0" width="4" height="3" src="#imagen5"></a-plane>
+      <a-plane position="9.5 5 5" rotation="0 -90 0" width="4" height="3" src="#imagen6"></a-plane>
+      
+      
+     
       <!-- Cámara para explorar la escena -->
-      <a-entity position="0 1.6 5">
+      <a-entity position="0 5 0">
         <a-camera wasd-controls-enabled="true"></a-camera>
       </a-entity>
     </a-scene>
